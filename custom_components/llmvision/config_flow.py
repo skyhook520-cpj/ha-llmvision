@@ -1364,8 +1364,8 @@ class llmvisionConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
                 #     CONF_TIMELINE_SUMMARY_PROMPT, DEFAULT_SUMMARY_PROMPT),
             },
             "memory_section": {
-                CONF_MEMORY_PATHS: self.init_info.get(CONF_MEMORY_PATHS),
-                CONF_MEMORY_STRINGS: self.init_info.get(CONF_MEMORY_STRINGS),
+                CONF_MEMORY_PATHS: self.init_info.get(CONF_MEMORY_PATHS, []),
+                CONF_MEMORY_STRINGS: self.init_info.get(CONF_MEMORY_STRINGS, []),
             },
         }
         data_schema = self.add_suggested_values_to_schema(data_schema, suggested)
